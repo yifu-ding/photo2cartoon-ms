@@ -9,7 +9,7 @@
 
 
 
-主要包含两个生成器Generator和四个辨别器Discriminator，也是本工作的主要完成训练框架转换的部分。本工作主要根据开源的pytorch代码，将其中的风格迁移模型U-GAT-IT的模型定义、训练和测试脚本改成了mindspore框架，而数据预处理的部分保留原先的pytorch框架。
+主要包含两个生成器Generator和四个辨别器Discriminator，也是本工作的主要完成训练框架转换的部分。本工作主要根据开源的pytorch代码，将其中的风格迁移模型U-GAT-IT的模型定义、训练和测试脚本改成了mindspore框架（具体包括**训练脚本**`./models/UGATIT_sadalin_hourglass.py`和**模型定义文件**`./models/ms/networks.py`），而数据预处理的部分保留原先的pytorch框架。
 
 ## 生成过程
 
