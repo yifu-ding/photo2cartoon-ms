@@ -110,7 +110,10 @@ python train.py --dataset photo2cartoon --pretrained_model pretrained_models
 
 3. 训练过程中会输出iteration和训练的时间、生成器的损失g_loss和辨别器的损失d_loss：
 
-<img src="./images/image-20220625224551181.png" alt="image-20220625224551181" style="zoom:50%;" />
+<div>
+  <img src='./images/image-20220625224551181.png' height='140px' width='600px'>
+</div>
+
 
 4. 按照pytorch源码中的设置，需要对模型进行约9w轮次的迭代训练，才能得到比较好的效果。
 
@@ -126,8 +129,9 @@ python test.py --photo_path ./images/photo_test.jpg --save_path ./images/cartoon
 
 2. 测试输出如下，表示漫画脸生成成功，生成结果存放在`--save_path`设置的路径下。
 
-<img src="./images/image-20220625225603833.png" alt="image-20220625225603833" style="zoom:50%;" />
-
+<div>
+  <img src='./images/image-20220625225603833.png' height='70px' width='340px' >
+</div>
 
 
 ### 参考
