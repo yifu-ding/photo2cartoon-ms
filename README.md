@@ -5,7 +5,9 @@
 
 [U-GAT-IT](https://arxiv.org/pdf/1907.10830.pdf)是Clova AI Research的Junho Kim等人发表在ICLR2020上的一个基于GAN的风格迁移模型。整体框架图如图所示。
 
-![image-20220625221057787](/Users/yifuding/Library/Application Support/typora-user-images/image-20220625221057787.png)
+![image-20220625221057787](./images/image-20220625221057787.png)
+
+
 
 主要包含两个生成器Generator和四个辨别器Discriminator，也是本工作的主要完成训练框架转换的部分。本工作主要根据开源的pytorch代码，将其中的风格迁移模型U-GAT-IT的模型定义、训练和测试脚本改成了mindspore框架，而数据预处理的部分保留原先的pytorch框架。
 
@@ -18,11 +20,11 @@
 - 将关键点边界框按固定的比例扩张并裁剪出人脸区域。
 - 使用人像分割模型将背景置白，得到统一的图像模式。
 
-![image-20220625223031715](/Users/yifuding/Library/Application Support/typora-user-images/image-20220625223031715.png)
+![image-20220625223031715](./images/image-20220625223031715.png)
 
 最后将去除背景的正脸，输入U-GAT-IT模型中进行漫画风格迁移，得到最终的漫画脸。
 
-<img src="/Users/yifuding/Library/Application Support/typora-user-images/image-20220625220708375.png" alt="image-20220625220708375" style="zoom:50%;" />
+<img src="./images/image-20220625220708375.png" alt="image-20220625220708375" style="zoom:50%;" />
 
 
 ## Start
@@ -104,7 +106,7 @@ python train.py --dataset photo2cartoon --pretrained_model pretrained_models
 
 3. 训练过程中会输出iteration和训练的时间、生成器的损失g_loss和辨别器的损失d_loss：
 
-<img src="/Users/yifuding/Library/Application Support/typora-user-images/image-20220625224551181.png" alt="image-20220625224551181" style="zoom:50%;" />
+<img src="./images/image-20220625224551181.png" alt="image-20220625224551181" style="zoom:50%;" />
 
 4. 按照pytorch源码中的设置，需要对模型进行约9w轮次的迭代训练，才能得到比较好的效果。
 
@@ -120,7 +122,7 @@ python test.py --photo_path ./images/photo_test.jpg --save_path ./images/cartoon
 
 2. 测试输出如下，表示漫画脸生成成功，生成结果存放在`--save_path`设置的路径下。
 
-<img src="/Users/yifuding/Library/Application Support/typora-user-images/image-20220625225603833.png" alt="image-20220625225603833" style="zoom:50%;" />
+<img src="./images/image-20220625225603833.png" alt="image-20220625225603833" style="zoom:50%;" />
 
 
 
