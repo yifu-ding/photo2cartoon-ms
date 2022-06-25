@@ -1,0 +1,339 @@
+# [No.1] construct_wrapper.1
+# In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(118)/    def construct(self, x):/
+funcgraph fg_1(
+        %para1 : Tensor(F32)[1, 3, 384, 384]    # x
+        , %para2 : Ref[Tensor(F32)][21, 21, 16, 16]    # upscore8.weight
+        , %para3 : Ref[Tensor(F32)][21, 21, 4, 4]    # upscore_pool4.weight
+        , %para4 : Ref[Tensor(F32)][21]    # score_pool3.bias
+        , %para5 : Ref[Tensor(F32)][21, 256, 1, 1]    # score_pool3.weight
+        , %para6 : Ref[Tensor(F32)][21, 21, 4, 4]    # upscore2.weight
+        , %para7 : Ref[Tensor(F32)][21]    # score_fr.bias
+        , %para8 : Ref[Tensor(F32)][21, 4096, 1, 1]    # score_fr.weight
+        , %para9 : Ref[Tensor(F32)][21]    # score_pool4.bias
+        , %para10 : Ref[Tensor(F32)][21, 512, 1, 1]    # score_pool4.weight
+        , %para11 : Ref[Tensor(F32)][256]    # conv3_3.bias
+        , %para12 : Ref[Tensor(F32)][256, 256, 3, 3]    # conv3_3.weight
+        , %para13 : Ref[Tensor(F32)][4096]    # fc7.bias
+        , %para14 : Ref[Tensor(F32)][4096, 4096, 1, 1]    # fc7.weight
+        , %para15 : Ref[Tensor(F32)][512]    # conv4_3.bias
+        , %para16 : Ref[Tensor(F32)][512, 512, 3, 3]    # conv4_3.weight
+        , %para17 : Ref[Tensor(F32)][256]    # conv3_2.bias
+        , %para18 : Ref[Tensor(F32)][256, 256, 3, 3]    # conv3_2.weight
+        , %para19 : Ref[Tensor(F32)][512]    # conv4_2.bias
+        , %para20 : Ref[Tensor(F32)][512, 512, 3, 3]    # conv4_2.weight
+        , %para21 : Ref[Tensor(F32)][256]    # conv3_1.bias
+        , %para22 : Ref[Tensor(F32)][256, 128, 3, 3]    # conv3_1.weight
+        , %para23 : Ref[Tensor(F32)][4096]    # fc6.bias
+        , %para24 : Ref[Tensor(F32)][4096, 512, 7, 7]    # fc6.weight
+        , %para25 : Ref[Tensor(F32)][512]    # conv4_1.bias
+        , %para26 : Ref[Tensor(F32)][512, 256, 3, 3]    # conv4_1.weight
+        , %para27 : Ref[Tensor(F32)][128]    # conv2_2.bias
+        , %para28 : Ref[Tensor(F32)][128, 128, 3, 3]    # conv2_2.weight
+        , %para29 : Ref[Tensor(F32)][512]    # conv5_3.bias
+        , %para30 : Ref[Tensor(F32)][512, 512, 3, 3]    # conv5_3.weight
+        , %para31 : Ref[Tensor(F32)][128]    # conv2_1.bias
+        , %para32 : Ref[Tensor(F32)][128, 64, 3, 3]    # conv2_1.weight
+        , %para33 : Ref[Tensor(F32)][512]    # conv5_2.bias
+        , %para34 : Ref[Tensor(F32)][512, 512, 3, 3]    # conv5_2.weight
+        , %para35 : Ref[Tensor(F32)][512]    # conv5_1.bias
+        , %para36 : Ref[Tensor(F32)][512, 512, 3, 3]    # conv5_1.weight
+        , %para37 : Ref[Tensor(F32)][64]    # conv1_2.bias
+        , %para38 : Ref[Tensor(F32)][64, 64, 3, 3]    # conv1_2.weight
+        , %para39 : Ref[Tensor(F32)][64]    # conv1_1.bias
+        , %para40 : Ref[Tensor(F32)][64, 3, 3, 3]    # conv1_1.weight
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_28(%para1)    #(Tensor(F32)[1, 3, 384, 384])    # fg_28=construct.28 #scope: Default
+#[CNode]29
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(176)/        return h/#[CNode]30
+}
+# order:
+#   1: construct_wrapper.1:[CNode]29{[0]: ValueNode<FuncGraph> construct.28, [1]: x}
+#   2: construct_wrapper.1:[CNode]30{[0]: ValueNode<Primitive> Return, [1]: [CNode]29}
+
+
+# [No.2] construct.28
+# In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(118)/    def construct(self, x):/
+funcgraph fg_28[fg_1](
+        %para41 : Tensor(F32)[1, 3, 384, 384]    # h
+    ) {
+    %1 : Tensor(F32)[1, 64, 582, 582] = FuncGraph::fg_31(%para41)    #(Tensor(F32)[1, 3, 384, 384])    # fg_31=construct.31 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(120)/        h = self.relu1_1(self.conv1_1(h))/#[CNode]32
+    %2 : Tensor(F32)[1, 64, 582, 582] = FuncGraph::fg_33(%1)    #(Tensor(F32)[1, 64, 582, 582])    # fg_33=construct.33 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(120)/        h = self.relu1_1(self.conv1_1(h))/#h
+    %3 : Tensor(F32)[1, 64, 582, 582] = FuncGraph::fg_34(%2)    #(Tensor(F32)[1, 64, 582, 582])    # fg_34=construct.34 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(121)/        h = self.relu1_2(self.conv1_2(h))/#[CNode]35
+    %4 : Tensor(F32)[1, 64, 582, 582] = FuncGraph::fg_36(%3)    #(Tensor(F32)[1, 64, 582, 582])    # fg_36=construct.36 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(121)/        h = self.relu1_2(self.conv1_2(h))/#h
+    %5 : Tensor(F32)[1, 64, 291, 291] = FuncGraph::fg_37(%4)    #(Tensor(F32)[1, 64, 582, 582])    # fg_37=construct.37 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(122)/        h = self.pool1(h)/#h
+    %6 : Tensor(F32)[1, 128, 291, 291] = FuncGraph::fg_38(%5)    #(Tensor(F32)[1, 64, 291, 291])    # fg_38=construct.38 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(124)/        h = self.relu2_1(self.conv2_1(h))/#[CNode]39
+    %7 : Tensor(F32)[1, 128, 291, 291] = FuncGraph::fg_40(%6)    #(Tensor(F32)[1, 128, 291, 291])    # fg_40=construct.40 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(124)/        h = self.relu2_1(self.conv2_1(h))/#h
+    %8 : Tensor(F32)[1, 128, 291, 291] = FuncGraph::fg_41(%7)    #(Tensor(F32)[1, 128, 291, 291])    # fg_41=construct.41 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(125)/        h = self.relu2_2(self.conv2_2(h))/#[CNode]42
+    %9 : Tensor(F32)[1, 128, 291, 291] = FuncGraph::fg_43(%8)    #(Tensor(F32)[1, 128, 291, 291])    # fg_43=construct.43 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(125)/        h = self.relu2_2(self.conv2_2(h))/#h
+    %10 : Tensor(F32)[1, 128, 145, 145] = FuncGraph::fg_44(%9)    #(Tensor(F32)[1, 128, 291, 291])    # fg_44=construct.44 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(126)/        h = self.pool2(h)/#h
+    %11 : Tensor(F32)[1, 256, 145, 145] = FuncGraph::fg_45(%10)    #(Tensor(F32)[1, 128, 145, 145])    # fg_45=construct.45 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(128)/        h = self.relu3_1(self.conv3_1(h))/#[CNode]46
+    %12 : Tensor(F32)[1, 256, 145, 145] = FuncGraph::fg_47(%11)    #(Tensor(F32)[1, 256, 145, 145])    # fg_47=construct.47 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(128)/        h = self.relu3_1(self.conv3_1(h))/#h
+    %13 : Tensor(F32)[1, 256, 145, 145] = FuncGraph::fg_48(%12)    #(Tensor(F32)[1, 256, 145, 145])    # fg_48=construct.48 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(129)/        h = self.relu3_2(self.conv3_2(h))/#[CNode]49
+    %14 : Tensor(F32)[1, 256, 145, 145] = FuncGraph::fg_50(%13)    #(Tensor(F32)[1, 256, 145, 145])    # fg_50=construct.50 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(129)/        h = self.relu3_2(self.conv3_2(h))/#h
+    %15 : Tensor(F32)[1, 256, 145, 145] = FuncGraph::fg_51(%14)    #(Tensor(F32)[1, 256, 145, 145])    # fg_51=construct.51 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(130)/        h = self.relu3_3(self.conv3_3(h))/#[CNode]52
+    %16 : Tensor(F32)[1, 256, 145, 145] = FuncGraph::fg_53(%15)    #(Tensor(F32)[1, 256, 145, 145])    # fg_53=construct.53 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(130)/        h = self.relu3_3(self.conv3_3(h))/#h
+    %17 : Tensor(F32)[1, 256, 72, 72] = FuncGraph::fg_54(%16)    #(Tensor(F32)[1, 256, 145, 145])    # fg_54=construct.54 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(131)/        h = self.pool3(h)/#pool3
+    %18 : Tensor(F32)[1, 512, 72, 72] = FuncGraph::fg_55(%17)    #(Tensor(F32)[1, 256, 72, 72])    # fg_55=construct.55 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(134)/        h = self.relu4_1(self.conv4_1(h))/#[CNode]56
+    %19 : Tensor(F32)[1, 512, 72, 72] = FuncGraph::fg_57(%18)    #(Tensor(F32)[1, 512, 72, 72])    # fg_57=construct.57 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(134)/        h = self.relu4_1(self.conv4_1(h))/#h
+    %20 : Tensor(F32)[1, 512, 72, 72] = FuncGraph::fg_58(%19)    #(Tensor(F32)[1, 512, 72, 72])    # fg_58=construct.58 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(135)/        h = self.relu4_2(self.conv4_2(h))/#[CNode]59
+    %21 : Tensor(F32)[1, 512, 72, 72] = FuncGraph::fg_60(%20)    #(Tensor(F32)[1, 512, 72, 72])    # fg_60=construct.60 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(135)/        h = self.relu4_2(self.conv4_2(h))/#h
+    %22 : Tensor(F32)[1, 512, 72, 72] = FuncGraph::fg_61(%21)    #(Tensor(F32)[1, 512, 72, 72])    # fg_61=construct.61 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(136)/        h = self.relu4_3(self.conv4_3(h))/#[CNode]62
+    %23 : Tensor(F32)[1, 512, 72, 72] = FuncGraph::fg_63(%22)    #(Tensor(F32)[1, 512, 72, 72])    # fg_63=construct.63 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(136)/        h = self.relu4_3(self.conv4_3(h))/#h
+    %24 : Tensor(F32)[1, 512, 36, 36] = FuncGraph::fg_64(%23)    #(Tensor(F32)[1, 512, 72, 72])    # fg_64=construct.64 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(137)/        h = self.pool4(h)/#pool4
+    %25 : Tensor(F32)[1, 512, 36, 36] = FuncGraph::fg_65(%24)    #(Tensor(F32)[1, 512, 36, 36])    # fg_65=construct.65 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(140)/        h = self.relu5_1(self.conv5_1(h))/#[CNode]66
+    %26 : Tensor(F32)[1, 512, 36, 36] = FuncGraph::fg_67(%25)    #(Tensor(F32)[1, 512, 36, 36])    # fg_67=construct.67 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(140)/        h = self.relu5_1(self.conv5_1(h))/#h
+    %27 : Tensor(F32)[1, 512, 36, 36] = FuncGraph::fg_68(%26)    #(Tensor(F32)[1, 512, 36, 36])    # fg_68=construct.68 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(141)/        h = self.relu5_2(self.conv5_2(h))/#[CNode]69
+    %28 : Tensor(F32)[1, 512, 36, 36] = FuncGraph::fg_70(%27)    #(Tensor(F32)[1, 512, 36, 36])    # fg_70=construct.70 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(141)/        h = self.relu5_2(self.conv5_2(h))/#h
+    %29 : Tensor(F32)[1, 512, 36, 36] = FuncGraph::fg_71(%28)    #(Tensor(F32)[1, 512, 36, 36])    # fg_71=construct.71 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(142)/        h = self.relu5_3(self.conv5_3(h))/#[CNode]72
+    %30 : Tensor(F32)[1, 512, 36, 36] = FuncGraph::fg_73(%29)    #(Tensor(F32)[1, 512, 36, 36])    # fg_73=construct.73 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(142)/        h = self.relu5_3(self.conv5_3(h))/#h
+    %31 : Tensor(F32)[1, 512, 18, 18] = FuncGraph::fg_74(%30)    #(Tensor(F32)[1, 512, 36, 36])    # fg_74=construct.74 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(143)/        h = self.pool5(h)/#h
+    %32 : Tensor(F32)[1, 4096, 12, 12] = FuncGraph::fg_75(%31)    #(Tensor(F32)[1, 512, 18, 18])    # fg_75=construct.75 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(145)/        h = self.fc6(h)/#h
+    %33 : Tensor(F32)[1, 4096, 12, 12] = FuncGraph::fg_76(%32)    #(Tensor(F32)[1, 4096, 12, 12])    # fg_76=construct.76 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(146)/        h = self.relu6(h)/#h
+    %34 : Tensor(F32)[1, 4096, 12, 12] = FuncGraph::fg_77(%33)    #(Tensor(F32)[1, 4096, 12, 12])    # fg_77=construct.77 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(147)/        h = self.drop6(h)/#h
+    %35 : Tensor(F32)[1, 4096, 12, 12] = FuncGraph::fg_78(%34)    #(Tensor(F32)[1, 4096, 12, 12])    # fg_78=construct.78 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(149)/        h = self.fc7(h)/#h
+    %36 : Tensor(F32)[1, 4096, 12, 12] = FuncGraph::fg_79(%35)    #(Tensor(F32)[1, 4096, 12, 12])    # fg_79=construct.79 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(150)/        h = self.relu7(h)/#h
+    %37 : Tensor(F32)[1, 4096, 12, 12] = FuncGraph::fg_80(%36)    #(Tensor(F32)[1, 4096, 12, 12])    # fg_80=construct.80 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(151)/        h = self.drop7(h)/#h
+    %38 : Tensor(F32)[1, 21, 12, 12] = FuncGraph::fg_81(%37)    #(Tensor(F32)[1, 4096, 12, 12])    # fg_81=construct.81 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(153)/        h = self.score_fr(h)/#h
+    %39 : Tensor(F32)[1, 21, 24, 24] = FuncGraph::fg_82(%38)    #(Tensor(F32)[1, 21, 12, 12])    # fg_82=construct.82 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(154)/        h = self.upscore2(h)/#upscore2
+    %40 : Tensor(F32)[1, 21, 36, 36] = FuncGraph::fg_83(%24)    #(Tensor(F32)[1, 512, 36, 36])    # fg_83=construct.83 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(157)/        h = self.score_pool4(pool4)/#h
+    %41 : Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(NoneType, NoneType, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]84
+    %42 : Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(NoneType, NoneType, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]85
+    %43 : Func = ClassType() #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]86
+    %44 : Tuple[I64*4] = %43(%39)    #(Tensor(F32)[1, 21, 24, 24]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]87
+    %45 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%44, I64(2))    #(Tuple[I64*4], I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]88
+    %46 : I64 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(I64(5), %45)    #(I64, I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]89
+    %47 : Slice[Int64 : Int64 : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(5), %46, None)    #(I64, I64, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]90
+    %48 : Func = ClassType() #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]91
+    %49 : Tuple[I64*4] = %48(%39)    #(Tensor(F32)[1, 21, 24, 24]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]92
+    %50 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%49, I64(3))    #(Tuple[I64*4], I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]93
+    %51 : I64 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(I64(5), %50)    #(I64, I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]94
+    %52 : Slice[Int64 : Int64 : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(5), %51, None)    #(I64, I64, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]95
+    %53 : Tuple[Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone]*2,Slice[Int64 : Int64 : kMetaTypeNone]*2] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%41, %42, %47, %52)    #(Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone], Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone], Slice[Int64 : Int64 : kMetaTypeNone], Slice[Int64 : Int64 : kMetaTypeNone]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#[CNode]96
+    %54 : Tensor(F32)[1, 21, 24, 24] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%40, %53)    #(Tensor(F32)[1, 21, 36, 36], Tuple[Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone]*2,Slice[Int64 : Int64 : kMetaTypeNone]*2]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(158)/        h = h[:, :, 5:5 + P.Shape()(upscore2)[2], 5:5 + P.Shape()(upscore2)[3]]/#score_pool4c
+    %55 : Tensor(F32)[1, 21, 24, 24] = DoSignaturePrimitive::S-Prim-add{prim_type=1}(%39, %54)    #(Tensor(F32)[1, 21, 24, 24], Tensor(F32)[1, 21, 24, 24]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(161)/        h = upscore2 + score_pool4c  # 1/16/#h
+    %56 : Tensor(F32)[1, 21, 48, 48] = FuncGraph::fg_97(%55)    #(Tensor(F32)[1, 21, 24, 24])    # fg_97=construct.97 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(162)/        h = self.upscore_pool4(h)/#upscore_pool4
+    %57 : Tensor(F32)[1, 21, 72, 72] = FuncGraph::fg_98(%17)    #(Tensor(F32)[1, 256, 72, 72])    # fg_98=construct.98 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(165)/        h = self.score_pool3(pool3)/#h
+    %58 : Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(NoneType, NoneType, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(166)/        h = h[:, :,/#[CNode]99
+    %59 : Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(NoneType, NoneType, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(166)/        h = h[:, :,/#[CNode]100
+    %60 : Func = ClassType() #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(167)/              9:9 + P.Shape()(upscore_pool4)[2],/#[CNode]101
+    %61 : Tuple[I64*4] = %60(%56)    #(Tensor(F32)[1, 21, 48, 48]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(167)/              9:9 + P.Shape()(upscore_pool4)[2],/#[CNode]102
+    %62 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%61, I64(2))    #(Tuple[I64*4], I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(167)/              9:9 + P.Shape()(upscore_pool4)[2],/#[CNode]103
+    %63 : I64 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(I64(9), %62)    #(I64, I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(167)/              9:9 + P.Shape()(upscore_pool4)[2],/#[CNode]104
+    %64 : Slice[Int64 : Int64 : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(9), %63, None)    #(I64, I64, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(167)/              9:9 + P.Shape()(upscore_pool4)[2],/#[CNode]105
+    %65 : Func = ClassType() #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(168)/              9:9 + P.Shape()(upscore_pool4)[3]]/#[CNode]106
+    %66 : Tuple[I64*4] = %65(%56)    #(Tensor(F32)[1, 21, 48, 48]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(168)/              9:9 + P.Shape()(upscore_pool4)[3]]/#[CNode]107
+    %67 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%66, I64(3))    #(Tuple[I64*4], I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(168)/              9:9 + P.Shape()(upscore_pool4)[3]]/#[CNode]108
+    %68 : I64 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(I64(9), %67)    #(I64, I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(168)/              9:9 + P.Shape()(upscore_pool4)[3]]/#[CNode]109
+    %69 : Slice[Int64 : Int64 : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(9), %68, None)    #(I64, I64, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(168)/              9:9 + P.Shape()(upscore_pool4)[3]]/#[CNode]110
+    %70 : Tuple[Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone]*2,Slice[Int64 : Int64 : kMetaTypeNone]*2] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%58, %59, %64, %69)    #(Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone], Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone], Slice[Int64 : Int64 : kMetaTypeNone], Slice[Int64 : Int64 : kMetaTypeNone]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(166)/        h = h[:, :,/#[CNode]111
+    %71 : Tensor(F32)[1, 21, 48, 48] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%57, %70)    #(Tensor(F32)[1, 21, 72, 72], Tuple[Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone]*2,Slice[Int64 : Int64 : kMetaTypeNone]*2]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(166)/        h = h[:, :,/#score_pool3c
+    %72 : Tensor(F32)[1, 21, 48, 48] = DoSignaturePrimitive::S-Prim-add{prim_type=1}(%56, %71)    #(Tensor(F32)[1, 21, 48, 48], Tensor(F32)[1, 21, 48, 48]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(171)/        h = upscore_pool4 + score_pool3c  # 1/8/#h
+    %73 : Tensor(F32)[1, 21, 384, 384] = FuncGraph::fg_112(%72)    #(Tensor(F32)[1, 21, 48, 48])    # fg_112=construct.112 #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(173)/        h = self.upscore8(h)/#h
+    %74 : Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(NoneType, NoneType, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]113
+    %75 : Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(NoneType, NoneType, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]114
+    %76 : Func = ClassType() #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]115
+    %77 : Tuple[I64*4] = %76(%para41)    #(Tensor(F32)[1, 3, 384, 384]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]116
+    %78 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%77, I64(2))    #(Tuple[I64*4], I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]117
+    %79 : I64 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(I64(31), %78)    #(I64, I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]118
+    %80 : Slice[Int64 : Int64 : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(31), %79, None)    #(I64, I64, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]119
+    %81 : Func = ClassType() #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]120
+    %82 : Tuple[I64*4] = %81(%para41)    #(Tensor(F32)[1, 3, 384, 384]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]121
+    %83 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%82, I64(3))    #(Tuple[I64*4], I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]122
+    %84 : I64 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(I64(31), %83)    #(I64, I64) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]123
+    %85 : Slice[Int64 : Int64 : kMetaTypeNone] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(31), %84, None)    #(I64, I64, NoneType) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]124
+    %86 : Tuple[Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone]*2,Slice[Int64 : Int64 : kMetaTypeNone]*2] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%74, %75, %80, %85)    #(Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone], Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone], Slice[Int64 : Int64 : kMetaTypeNone], Slice[Int64 : Int64 : kMetaTypeNone]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]125
+    %87 : Tensor(F32)[1, 21, 353, 353] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%73, %86)    #(Tensor(F32)[1, 21, 384, 384], Tuple[Slice[kMetaTypeNone : kMetaTypeNone : kMetaTypeNone]*2,Slice[Int64 : Int64 : kMetaTypeNone]*2]) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]126
+
+#------------------------> 1
+    %88 = Primitive::getattr{prim_type=1}(%87, "contiguous")    #(Tensor(F32)[1, 21, 353, 353], String) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#[CNode]127
+    %89 = %88() #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(174)/        h = h[:, :, 31:31 + P.Shape()(x)[2], 31:31 + P.Shape()(x)[3]].contiguous()/#h
+    Primitive::Return{prim_type=1}(%89)    #(Undefined) #scope: Default
+      # In file /Users/yifuding/Documents/study/博一下课程/AI开源系统/codes/photo2cartoon-ms/models/ms/fcn8s.py(176)/        return h/#[CNode]128
+}
+# order:
+#   1: construct.28:[CNode]32{[0]: ValueNode<FuncGraph> construct.31, [1]: h}
+#   2: construct.28:h{[0]: ValueNode<FuncGraph> construct.33, [1]: [CNode]32}
+#   3: construct.28:[CNode]35{[0]: ValueNode<FuncGraph> construct.34, [1]: h}
+#   4: construct.28:h{[0]: ValueNode<FuncGraph> construct.36, [1]: [CNode]35}
+#   5: construct.28:h{[0]: ValueNode<FuncGraph> construct.37, [1]: h}
+#   6: construct.28:[CNode]39{[0]: ValueNode<FuncGraph> construct.38, [1]: h}
+#   7: construct.28:h{[0]: ValueNode<FuncGraph> construct.40, [1]: [CNode]39}
+#   8: construct.28:[CNode]42{[0]: ValueNode<FuncGraph> construct.41, [1]: h}
+#   9: construct.28:h{[0]: ValueNode<FuncGraph> construct.43, [1]: [CNode]42}
+#  10: construct.28:h{[0]: ValueNode<FuncGraph> construct.44, [1]: h}
+#  11: construct.28:[CNode]46{[0]: ValueNode<FuncGraph> construct.45, [1]: h}
+#  12: construct.28:h{[0]: ValueNode<FuncGraph> construct.47, [1]: [CNode]46}
+#  13: construct.28:[CNode]49{[0]: ValueNode<FuncGraph> construct.48, [1]: h}
+#  14: construct.28:h{[0]: ValueNode<FuncGraph> construct.50, [1]: [CNode]49}
+#  15: construct.28:[CNode]52{[0]: ValueNode<FuncGraph> construct.51, [1]: h}
+#  16: construct.28:h{[0]: ValueNode<FuncGraph> construct.53, [1]: [CNode]52}
+#  17: construct.28:pool3{[0]: ValueNode<FuncGraph> construct.54, [1]: h}
+#  18: construct.28:[CNode]56{[0]: ValueNode<FuncGraph> construct.55, [1]: pool3}
+#  19: construct.28:h{[0]: ValueNode<FuncGraph> construct.57, [1]: [CNode]56}
+#  20: construct.28:[CNode]59{[0]: ValueNode<FuncGraph> construct.58, [1]: h}
+#  21: construct.28:h{[0]: ValueNode<FuncGraph> construct.60, [1]: [CNode]59}
+#  22: construct.28:[CNode]62{[0]: ValueNode<FuncGraph> construct.61, [1]: h}
+#  23: construct.28:h{[0]: ValueNode<FuncGraph> construct.63, [1]: [CNode]62}
+#  24: construct.28:pool4{[0]: ValueNode<FuncGraph> construct.64, [1]: h}
+#  25: construct.28:[CNode]66{[0]: ValueNode<FuncGraph> construct.65, [1]: pool4}
+#  26: construct.28:h{[0]: ValueNode<FuncGraph> construct.67, [1]: [CNode]66}
+#  27: construct.28:[CNode]69{[0]: ValueNode<FuncGraph> construct.68, [1]: h}
+#  28: construct.28:h{[0]: ValueNode<FuncGraph> construct.70, [1]: [CNode]69}
+#  29: construct.28:[CNode]72{[0]: ValueNode<FuncGraph> construct.71, [1]: h}
+#  30: construct.28:h{[0]: ValueNode<FuncGraph> construct.73, [1]: [CNode]72}
+#  31: construct.28:h{[0]: ValueNode<FuncGraph> construct.74, [1]: h}
+#  32: construct.28:h{[0]: ValueNode<FuncGraph> construct.75, [1]: h}
+#  33: construct.28:h{[0]: ValueNode<FuncGraph> construct.76, [1]: h}
+#  34: construct.28:h{[0]: ValueNode<FuncGraph> construct.77, [1]: h}
+#  35: construct.28:h{[0]: ValueNode<FuncGraph> construct.78, [1]: h}
+#  36: construct.28:h{[0]: ValueNode<FuncGraph> construct.79, [1]: h}
+#  37: construct.28:h{[0]: ValueNode<FuncGraph> construct.80, [1]: h}
+#  38: construct.28:h{[0]: ValueNode<FuncGraph> construct.81, [1]: h}
+#  39: construct.28:upscore2{[0]: ValueNode<FuncGraph> construct.82, [1]: h}
+#  40: construct.28:h{[0]: ValueNode<FuncGraph> construct.83, [1]: pool4}
+#  41: construct.28:[CNode]84{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  42: construct.28:[CNode]85{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  43: construct.28:[CNode]86{[0]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.Shape'}
+#  44: construct.28:[CNode]87{[0]: [CNode]86, [1]: upscore2}
+#  45: construct.28:[CNode]88{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]87, [2]: ValueNode<Int64Imm> 2}
+#  46: construct.28:[CNode]89{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: ValueNode<Int64Imm> 5, [2]: [CNode]88}
+#  47: construct.28:[CNode]90{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 5, [2]: [CNode]89, [3]: ValueNode<None> None}
+#  48: construct.28:[CNode]91{[0]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.Shape'}
+#  49: construct.28:[CNode]92{[0]: [CNode]91, [1]: upscore2}
+#  50: construct.28:[CNode]93{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]92, [2]: ValueNode<Int64Imm> 3}
+#  51: construct.28:[CNode]94{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: ValueNode<Int64Imm> 5, [2]: [CNode]93}
+#  52: construct.28:[CNode]95{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 5, [2]: [CNode]94, [3]: ValueNode<None> None}
+#  53: construct.28:[CNode]96{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]84, [2]: [CNode]85, [3]: [CNode]90, [4]: [CNode]95}
+#  54: construct.28:score_pool4c{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: h, [2]: [CNode]96}
+#  55: construct.28:h{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: upscore2, [2]: score_pool4c}
+#  56: construct.28:upscore_pool4{[0]: ValueNode<FuncGraph> construct.97, [1]: h}
+#  57: construct.28:h{[0]: ValueNode<FuncGraph> construct.98, [1]: pool3}
+#  58: construct.28:[CNode]99{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  59: construct.28:[CNode]100{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  60: construct.28:[CNode]101{[0]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.Shape'}
+#  61: construct.28:[CNode]102{[0]: [CNode]101, [1]: upscore_pool4}
+#  62: construct.28:[CNode]103{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]102, [2]: ValueNode<Int64Imm> 2}
+#  63: construct.28:[CNode]104{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: ValueNode<Int64Imm> 9, [2]: [CNode]103}
+#  64: construct.28:[CNode]105{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 9, [2]: [CNode]104, [3]: ValueNode<None> None}
+#  65: construct.28:[CNode]106{[0]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.Shape'}
+#  66: construct.28:[CNode]107{[0]: [CNode]106, [1]: upscore_pool4}
+#  67: construct.28:[CNode]108{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]107, [2]: ValueNode<Int64Imm> 3}
+#  68: construct.28:[CNode]109{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: ValueNode<Int64Imm> 9, [2]: [CNode]108}
+#  69: construct.28:[CNode]110{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 9, [2]: [CNode]109, [3]: ValueNode<None> None}
+#  70: construct.28:[CNode]111{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]99, [2]: [CNode]100, [3]: [CNode]105, [4]: [CNode]110}
+#  71: construct.28:score_pool3c{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: h, [2]: [CNode]111}
+#  72: construct.28:h{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: upscore_pool4, [2]: score_pool3c}
+#  73: construct.28:h{[0]: ValueNode<FuncGraph> construct.112, [1]: h}
+#  74: construct.28:[CNode]113{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  75: construct.28:[CNode]114{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  76: construct.28:[CNode]115{[0]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.Shape'}
+#  77: construct.28:[CNode]116{[0]: [CNode]115, [1]: h}
+#  78: construct.28:[CNode]117{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]116, [2]: ValueNode<Int64Imm> 2}
+#  79: construct.28:[CNode]118{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: ValueNode<Int64Imm> 31, [2]: [CNode]117}
+#  80: construct.28:[CNode]119{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 31, [2]: [CNode]118, [3]: ValueNode<None> None}
+#  81: construct.28:[CNode]120{[0]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.Shape'}
+#  82: construct.28:[CNode]121{[0]: [CNode]120, [1]: h}
+#  83: construct.28:[CNode]122{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]121, [2]: ValueNode<Int64Imm> 3}
+#  84: construct.28:[CNode]123{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: ValueNode<Int64Imm> 31, [2]: [CNode]122}
+#  85: construct.28:[CNode]124{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 31, [2]: [CNode]123, [3]: ValueNode<None> None}
+#  86: construct.28:[CNode]125{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]113, [2]: [CNode]114, [3]: [CNode]119, [4]: [CNode]124}
+#  87: construct.28:[CNode]126{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: h, [2]: [CNode]125}
+#  88: construct.28:[CNode]127{[0]: ValueNode<Primitive> getattr, [1]: [CNode]126, [2]: ValueNode<StringImm> contiguous}
+#  89: construct.28:h{[0]: [CNode]127}
+#  90: construct.28:[CNode]128{[0]: ValueNode<Primitive> Return, [1]: h}
+
+
+#===============================================================================
+# num of function graphs in stack: 2
