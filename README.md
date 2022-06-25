@@ -25,7 +25,7 @@
 最后将去除背景的正脸，输入U-GAT-IT模型中进行漫画风格迁移，得到最终的漫画脸。
 
 <div align='center'>
-  <img src='./images/image-20220625220708375.png' height='150px' width='150px'>
+  <img src='./images/image-20220625220708375.png' height='150px' width='141px'>
 </div>
 
 
